@@ -13,6 +13,16 @@
     font-size: 16px;
     top: 100px;
   }
+
+  .height {
+    flex-wrap: wrap;
+    flex-basis: 50%;
+  }
+
+  .tester {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -42,6 +52,10 @@
     flex-wrap: wrap;
     flex-direction: column;
   }
+
+  .not-good-btn {
+    width: 68%;
+  }
 }
 
 @media screen and (min-width: 411px) {
@@ -54,6 +68,12 @@
     width: 77%;
     font-size: 23px;
     top: 40px;
+  }
+}
+
+@media screen and (min-width: 549px) {
+  .not-good-btn {
+    width: 38%;
   }
 }
 
@@ -77,13 +97,6 @@
   }
 }
 
-@media screen and (min-width: 361px) {
-  .logo {
-    width: 20%;
-    height: 11vh;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .aw-logo {
     width: 10%;
@@ -101,6 +114,10 @@
   .tester {
     flex-direction: row;
   }
+
+  .not-good-btn {
+    width: 27%;
+  }
 }
 
 @media screen and (min-width: 846px) {
@@ -113,6 +130,16 @@
   .aw-logo {
     width: 7%;
   }
+
+  .not-good-btn {
+    width: 33%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .not-good-btn {
+    width: 17%;
+  }
 }
 
 @media screen and (min-width: 1400px) {
@@ -124,5 +151,9 @@
     width: 37%;
     font-size: 36px;
     top: 0;
+  }
+
+  .not-good-btn {
+    width: 15%;
   }
 }

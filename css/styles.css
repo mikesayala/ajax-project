@@ -3,7 +3,7 @@
 }
 
 body {
-  background: url("../images/pngwing.com.png") #000 no-repeat center center fixed;
+  background: url("../images/blush.png") #000 no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -126,4 +126,43 @@ body {
 
 .height {
   height: 66vh;
+}
+
+.hidden {
+  display: none;
+}
+
+.results-container {
+  background-color: #4d4d4d;
+  opacity: 0.8;
+  margin: 15px auto;
+  width: 90%;
+  height: 85vh;
+}
+
+.img-result {
+  width: 267px;
+}
+
+.results-row {
+  align-items: center;
+  height: 65vh;
+}
+
+.title {
+  font-family: 'Luckiest Guy', sans-serif;
+  color: white;
+  font-size: 36px;
+  margin: 0;
+}
+
+.not-good-btn {
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.not-good {
+  font-family: 'Luckiest Guy', sans-serif;
+  color: white;
+  margin-top: 15px;
 }
