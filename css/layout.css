@@ -1,12 +1,105 @@
-@media screen and (max-width: 768px) {
+.col-full {
+  width: 100%;
+}
+
+@media screen and (max-width: 360px) {
+  .logo {
+    width: 20%;
+    height: 11vh;
+  }
+
+  .headline-container {
+    width: 75%;
+    font-size: 16px;
+    top: 100px;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .header {
     display: none;
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 361px) {
+  .logo {
+    width: 20%;
+    height: 11vh;
+  }
+
+  .headline-container {
+    width: 75%;
+    font-size: 20px;
+    top: 50px;
+  }
+
+  .height {
+    flex-wrap: wrap;
+    flex-basis: 50%;
+  }
+
+  .tester {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 411px) {
+  .logo {
+    width: 18%;
+    height: 11vh;
+  }
+
+  .headline-container {
+    width: 77%;
+    font-size: 23px;
+    top: 40px;
+  }
+}
+
+@media screen and (min-width: 573px) {
+  .logo {
+    width: 15%;
+    height: 11vh;
+  }
+
+  .headline-container {
+    width: 80%;
+    font-size: 29px;
+    top: 30px;
+  }
+}
+
+@media screen and (min-width: 690px) {
+  .logo {
+    width: 12%;
+    height: 11vh;
+  }
+}
+
+@media screen and (min-width: 361px) {
+  .logo {
+    width: 20%;
+    height: 11vh;
+  }
+}
+
+@media screen and (min-width: 768px) {
   .aw-logo {
     width: 10%;
+  }
+
+  .mobile-logo {
+    display: none;
+  }
+
+  .test {
+    width: 50%;
+    margin: auto;
+  }
+
+  .tester {
+    flex-direction: row;
   }
 }
 
@@ -25,5 +118,11 @@
 @media screen and (min-width: 1400px) {
   .aw-logo {
     width: 5%;
+  }
+
+  .headline-container {
+    width: 37%;
+    font-size: 36px;
+    top: 0;
   }
 }
