@@ -1,0 +1,158 @@
+body {
+  background: url("../images/blush.png") #000 no-repeat center center fixed;
+  background-size: contain;
+  background-position-y: 40%;
+  position: relative;
+}
+
+.anime-watchers {
+  margin: 15px 10px 10px 10px;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.tint {
+  width: 100%;
+  height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.headline-container {
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+
+.header-container {
+  background-color: #232323;
+  font-family: 'Luckiest Guy', sans-serif;
+  color: #6f6f6f;
+  border-bottom: 1px solid #cceabb;
+  width: 100%;
+}
+
+.form-row {
+  width: 100%;
+  margin: auto;
+  height: 60vh;
+}
+
+.footer-container {
+  background-color: #232323;
+  font-family: 'Luckiest Guy', sans-serif;
+  color: #6f6f6f;
+  border-top: 1px solid #cceabb;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.headline {
+  color: #6f6f6f;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.aw-logo {
+  margin-left: 10px;
+}
+
+.logo {
+  margin-left: 10px;
+}
+
+.option-col {
+  height: 20vh;
+}
+
+.genre-select {
+  background-color: #c4c4c4;
+  color: white;
+  padding: 10px 15px;
+  font-family: 'Luckiest Guy', sans-serif;
+  border-radius: 3px;
+  border: none;
+  font-size: 15px;
+}
+
+.click-me {
+  font-family: 'Luckiest Guy', sans-serif;
+  color: black;
+  background-color: #c4c4c4;
+  padding: 10px 25px;
+  border-radius: 3px;
+  border: none;
+  font-size: 18px;
+}
+
+.height {
+  height: 66vh;
+}
+
+.hidden {
+  display: none;
+}
+
+.results-container {
+  background-color: #4d4d4d;
+  opacity: 0.8;
+  margin: 15px auto;
+  width: 90%;
+  height: 85vh;
+  border-radius: 5px;
+}
+
+.img-result {
+  width: 267px;
+  border-radius: 5px;
+}
+
+.results-row {
+  align-items: center;
+  height: 65vh;
+}
+
+.title {
+  font-family: 'Luckiest Guy', sans-serif;
+  color: white;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.not-good-btn {
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.not-good {
+  font-family: 'Luckiest Guy', sans-serif;
+  color: white;
+  margin-top: 15px;
+}
+
+.aw-logo:active {
+  transform: translateY(0.25rem);
+}
