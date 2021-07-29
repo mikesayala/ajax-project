@@ -19,7 +19,7 @@
     flex-basis: 50%;
   }
 
-  .tester {
+  .flex-col-row {
     flex-wrap: wrap;
     flex-direction: column;
   }
@@ -48,13 +48,17 @@
     flex-basis: 50%;
   }
 
-  .tester {
+  .flex-col-row {
     flex-wrap: wrap;
     flex-direction: column;
   }
 
   .not-good-btn {
     width: 68%;
+  }
+
+  .title {
+    font-size: 15px;
   }
 }
 
@@ -69,11 +73,19 @@
     font-size: 23px;
     top: 40px;
   }
+
+  .title {
+    font-size: 21px;
+  }
 }
 
 @media screen and (min-width: 549px) {
   .not-good-btn {
     width: 38%;
+  }
+
+  .title {
+    font-size: 24px;
   }
 }
 
@@ -106,17 +118,21 @@
     display: none;
   }
 
-  .test {
+  .width-50 {
     width: 50%;
     margin: auto;
   }
 
-  .tester {
+  .flex-col-row {
     flex-direction: row;
   }
 
   .not-good-btn {
     width: 27%;
+  }
+
+  .title {
+    font-size: 28px;
   }
 }
 
@@ -133,6 +149,10 @@
 
   .not-good-btn {
     width: 33%;
+  }
+
+  .title {
+    font-size: 30px;
   }
 }
 
