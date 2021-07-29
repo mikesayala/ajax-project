@@ -83,11 +83,9 @@ function handleSearch(event) {
 
 function handleRefresh(event) {
   event.preventDefault();
-  if (event.target.classList.contains('click-me refresh')) {
-    alert(event.target.innerHTML);
-  }
   $resultsContainer.innerHTML = '';
   genreSearch($form.elements.select.value);
+
 }
 
 function home(event) {

@@ -1,12 +1,5 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   background: url("../images/blush.png") #000 no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: contain;
   background-position-y: 40%;
   position: relative;
@@ -138,10 +131,12 @@ body {
   margin: 15px auto;
   width: 90%;
   height: 85vh;
+  border-radius: 5px;
 }
 
 .img-result {
   width: 267px;
+  border-radius: 5px;
 }
 
 .results-row {
