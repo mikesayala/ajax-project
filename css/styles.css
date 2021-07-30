@@ -162,6 +162,10 @@ body {
   transform: translateY(0.25rem);
 }
 
+.logo:active {
+  transform: translateY(0.25rem);
+}
+
 .rating-label {
   color: white;
   font-family: 'Luckiest Guy', sans-serif;
