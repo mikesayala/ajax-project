@@ -31,7 +31,28 @@
       </div>
     <form action="" class="form">
       <div class="row height justify-center">
-        <div class="column width-50 flex-col-row justify-around">
+        <div class="column width-50 flex-col-row justify-even">
+          <div class="rating-bar">
+            <div>
+              <label for="score" class="rating-label">Anime Score</label>
+            </div>
+           <input type="range" id="score" class="score" list="number" name="score" min="0" max="10" value="0" step="1">
+            <div>
+              <datalist id="number" class="data">
+                <option value="0" label="0"></option>
+                <option value="1" label="1"></option>
+                <option value="2" label="2"></option>
+                <option value="3" label="3"></option>
+                <option value="4" label="4"></option>
+                <option value="5" label="5"></option>
+                <option value="6" label="6"></option>
+                <option value="7" label="7"></option>
+                <option value="8" label="8"></option>
+                <option value="9" label="9"></option>
+                <option value="10" label="10"></option>
+              </datalist>
+            </div>
+          </div>
           <select name="select" id="genre" class="genre-select">
             <option value="0">Genre</option>
             <option value="1">Action</option>
