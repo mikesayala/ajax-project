@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 359px) {
   .logo {
     width: 20%;
     height: 11vh;
@@ -31,7 +31,7 @@
   }
 }
 
-@media screen and (min-width: 361px) {
+@media screen and (min-width: 360px) {
   .logo {
     width: 20%;
     height: 11vh;
@@ -46,6 +46,7 @@
   .height {
     flex-wrap: wrap;
     flex-basis: 50%;
+    height: 84vh;
   }
 
   .flex-col-row {
@@ -119,7 +120,7 @@
   }
 
   .width-50 {
-    width: 50%;
+    width: 43%;
     margin: auto;
   }
 
@@ -154,11 +155,21 @@
   .title {
     font-size: 30px;
   }
+
+  .width-50 {
+    width: 30%;
+    margin: auto;
+  }
 }
 
 @media screen and (min-width: 1200px) {
   .not-good-btn {
     width: 17%;
+  }
+
+  .width-50 {
+    width: 27%;
+    margin: auto;
   }
 }
 
@@ -175,5 +186,10 @@
 
   .not-good-btn {
     width: 15%;
+  }
+
+  .width-50 {
+    width: 23%;
+    margin: auto;
   }
 }

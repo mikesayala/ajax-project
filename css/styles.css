@@ -1,5 +1,5 @@
 body {
-  background: url("../images/blush.png") #000 no-repeat center center fixed;
+  background: url("../images/blushnobloom.png") rgb(0, 0, 0) no-repeat center center fixed;
   background-size: contain;
   background-position-y: 40%;
   position: relative;
@@ -28,6 +28,10 @@ body {
 
 .justify-around {
   justify-content: space-around;
+}
+
+.justify-even {
+  justify-content: space-evenly;
 }
 
 .justify-end {
@@ -96,6 +100,7 @@ body {
   border-radius: 3px;
   border: none;
   font-size: 15px;
+  margin-right: 10px;
 }
 
 .click-me {
@@ -109,7 +114,7 @@ body {
 }
 
 .height {
-  height: 66vh;
+  height: 62vh;
 }
 
 .hidden {
@@ -155,4 +160,34 @@ body {
 
 .aw-logo:active {
   transform: translateY(0.25rem);
+}
+
+.logo:active {
+  transform: translateY(0.25rem);
+}
+
+.rating-label {
+  color: white;
+  font-family: 'Luckiest Guy', sans-serif;
+}
+
+.rating-bar {
+  margin-bottom: 15px;
+}
+
+.score {
+  width: 171px;
+}
+
+.data {
+  color: white;
+  font-family: 'Luckiest Guy', sans-serif;
+}
+
+datalist {
+  display: contents;
+}
+
+datalist > option {
+  display: inline;
 }
