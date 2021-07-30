@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 359px) {
   .logo {
     width: 20%;
     height: 11vh;
@@ -31,7 +31,7 @@
   }
 }
 
-@media screen and (min-width: 361px) {
+@media screen and (min-width: 360px) {
   .logo {
     width: 20%;
     height: 11vh;
