@@ -131,8 +131,9 @@ body {
 }
 
 .img-result {
-  width: 267px;
   border-radius: 5px;
+  margin-right: 15px;
+  margin-top: 5px;
 }
 
 .results-row {
@@ -190,4 +191,11 @@ datalist {
 
 datalist > option {
   display: inline;
+}
+
+.synopsis {
+  color: white;
+  margin: 19px auto;
+  width: 90%;
+  font-family: 'PT sans', sans-serif;
 }
