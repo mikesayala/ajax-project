@@ -112,6 +112,13 @@ function genreDOMCreation(fullAnime) {
   return $genreObject;
 }
 
+// function generateList(listObject) {
+//   var $listRow = document.createElement('div');
+//   $listRow.setAttribute('class', 'row list-row');
+
+//   var $
+// }
+
 function shuffle(array) {
   for (var i = 0; i < array.length; i++) {
     var randomPosition = Math.floor(Math.random() * array.length);
