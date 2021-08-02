@@ -4,6 +4,7 @@ var $formContainer = document.querySelector('.form-container');
 var $homeBtn = document.querySelector('.aw-logo');
 var $homeBtn2 = document.querySelector('.home');
 var $score = document.getElementById('score');
+
 function genreSearch(value, score) {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://api.jikan.moe/v3/search/anime?q=&genre=' + value + '&score=' + score);
@@ -11,29 +12,58 @@ function genreSearch(value, score) {
   xhr.addEventListener('load', function () {
     var randomAnime = shuffle(xhr.response.results);
     var resultAnime = randomAnime[0];
-    $resultsContainer.appendChild(genreDOMCreation(resultAnime));
+    synopsis(resultAnime.mal_id);
   });
   xhr.send();
 }
 
-function genreDOMCreation(resultAnime) {
+function synopsis(malId) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://api.jikan.moe/v3/anime/' + malId);
+  xhr.responseType = 'json';
+  xhr.addEventListener('load', function () {
+    var fullAnime = {
+      title: xhr.response.title,
+      image: xhr.response.image_url,
+      synopsis: xhr.response.synopsis
+    };
+    $resultsContainer.appendChild(genreDOMCreation(fullAnime));
+  });
+  xhr.send();
+}
+
+function genreDOMCreation(fullAnime) {
   var $genreObject = document.createElement('div');
   $genreObject.setAttribute('class', 'genre-object');
 
   var $rowResult = document.createElement('div');
-  $rowResult.setAttribute('class', 'row justify-center results-row');
+  $rowResult.setAttribute('class', 'row justify-center flex-wrap results-row');
 
   var $imgUrl = document.createElement('img');
-  $imgUrl.setAttribute('src', resultAnime.image_url);
+  $imgUrl.setAttribute('src', fullAnime.image);
   $imgUrl.setAttribute('class', 'img-result');
   $rowResult.appendChild($imgUrl);
 
+  var $synopsisContainer = document.createElement('div');
+
+  var $desktopTitle = document.createElement('h3');
+  $desktopTitle.setAttribute('class', 'title desktop-title');
+  $desktopTitle.textContent = fullAnime.title;
+  $synopsisContainer.appendChild($desktopTitle);
+
+  var $p = document.createElement('p');
+  $p.setAttribute('class', 'synopsis');
+  $p.textContent = fullAnime.synopsis;
+  $synopsisContainer.appendChild($p);
+
+  $rowResult.appendChild($synopsisContainer);
+
   var $divTitle = document.createElement('div');
-  $divTitle.setAttribute('class', 'row justify-center');
+  $divTitle.setAttribute('class', 'row justify-center margin-top');
 
   var $h3 = document.createElement('h3');
-  $h3.setAttribute('class', 'title');
-  $h3.textContent = resultAnime.title;
+  $h3.setAttribute('class', 'title mobile-title');
+  $h3.textContent = fullAnime.title;
   $divTitle.appendChild($h3);
 
   var $form = document.createElement('form');
