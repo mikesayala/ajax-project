@@ -67,6 +67,24 @@ function genreDOMCreation(fullAnime) {
   $divTitle.appendChild($h3);
 
   var $form = document.createElement('form');
+  $form.setAttribute('class', 'row');
+
+  var $saveBtnDiv = document.createElement('div');
+  $saveBtnDiv.setAttribute('class', 'row justify-center not-good-btn');
+  $form.appendChild($saveBtnDiv);
+
+  var $saveLabel = document.createElement('label');
+  $saveLabel.setAttribute('for', 'save');
+  $saveLabel.setAttribute('class', 'not-good');
+  $saveLabel.textContent = 'Binge Worthy?';
+
+  var $saveBtn = document.createElement('input');
+  $saveBtn.setAttribute('type', 'submit');
+  $saveBtn.setAttribute('id', 'save');
+  $saveBtn.setAttribute('class', 'click-me refresh');
+  $saveBtn.setAttribute('value', 'Sa...Save me');
+  $saveBtnDiv.appendChild($saveLabel);
+  $saveBtnDiv.appendChild($saveBtn);
 
   var $notGoodBtn = document.createElement('div');
   $notGoodBtn.setAttribute('class', 'row justify-center not-good-btn');

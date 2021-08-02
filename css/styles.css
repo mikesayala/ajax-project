@@ -110,7 +110,7 @@ body {
   padding: 10px 25px;
   border-radius: 3px;
   border: none;
-  font-size: 18px;
+  font-size: 11px;
 }
 
 .height {
@@ -157,6 +157,7 @@ body {
   font-family: 'Luckiest Guy', sans-serif;
   color: white;
   margin-top: 15px;
+  font-size: 13px;
 }
 
 .aw-logo:active {
@@ -198,4 +199,20 @@ datalist > option {
   margin: 19px auto;
   width: 90%;
   font-family: 'PT sans', sans-serif;
+}
+
+.watch-list-container {
+  background-color: #4d4d4d;
+  opacity: 0.8;
+  margin: 15px auto;
+  width: 90%;
+  height: 85vh;
+  border-radius: 5px;
+}
+
+.list-header {
+  color: #4d4d4d;
+  font-family: 'Luckiest Guy', sans-serif;
+  margin-top: 10px;
+  font-size: 24px;
 }
