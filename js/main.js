@@ -4,7 +4,7 @@ var $formContainer = document.querySelector('.form-container');
 var $homeBtn = document.querySelector('.aw-logo');
 var $homeBtn2 = document.querySelector('.home');
 var $score = document.getElementById('score');
-
+// var $listRow = document.querySelector('.list-row');
 function genreSearch(value, score) {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://api.jikan.moe/v3/search/anime?q=&genre=' + value + '&score=' + score);
@@ -113,10 +113,17 @@ function genreDOMCreation(fullAnime) {
 }
 
 // function generateList(listObject) {
-//   var $listRow = document.createElement('div');
-//   $listRow.setAttribute('class', 'row list-row');
+//   var $listColumn = document.createElement('div');
+//   $listColumn.setAttribute('class', 'column list-column');
 
-//   var $
+//   var $listImg = document.createElement('img');
+//   $listImg.setAttribute('src', listObject.img_url);
+//   $listImg.setAttribute('class', 'list-img');
+//   $listColumn.appendChild($listImg);
+
+//   var $listH4 = document.createElement('h4');
+//   $listH4.setAttribute('class', 'h4');
+//   $listH4.textContent = listObject.title;
 // }
 
 function shuffle(array) {
@@ -144,6 +151,10 @@ function handleRefresh(event) {
 
 }
 
+// function handleSave(event) {
+//   console.log('hi');
+// }
+
 function home(event) {
   if (event.target.matches('.aw-logo') || event.target.matches('.home')) {
     $resultsContainer.classList.add('hidden');
@@ -151,6 +162,7 @@ function home(event) {
   }
 }
 
+// $resultsContainer.addEventListener('click', handleSave);
 $form.addEventListener('submit', handleSearch);
 $resultsContainer.addEventListener('submit', handleRefresh);
 $homeBtn.addEventListener('click', home);

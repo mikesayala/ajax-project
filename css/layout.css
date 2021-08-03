@@ -81,6 +81,10 @@
   .margin-top {
     margin-top: 35px;
   }
+
+  .list-column {
+    flex-basis: 50%;
+  }
 }
 
 @media screen and (min-width: 411px) {
@@ -176,6 +180,10 @@
 
   .synopsis {
     font-size: 13px;
+  }
+
+  .list-column {
+    flex-basis: 25%;
   }
 }
 
