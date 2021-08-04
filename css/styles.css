@@ -238,3 +238,15 @@ datalist > option {
   color: white;
   font-family: 'Luckiest Guy', sans-serif;
 }
+
+.watch-list-desktop,
+.watch-list-mobile {
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.watch-list-desktop:visited,
+.watch-list-mobile:visited {
+  text-decoration: none;
+  color: #6f6f6f;
+}
