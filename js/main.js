@@ -1,10 +1,14 @@
+/* global data */
+/* exported data */
+
 var $form = document.querySelector('.form');
 var $resultsContainer = document.querySelector('.results-container');
 var $formContainer = document.querySelector('.form-container');
 var $homeBtn = document.querySelector('.aw-logo');
 var $homeBtn2 = document.querySelector('.home');
 var $score = document.getElementById('score');
-// var $listRow = document.querySelector('.list-row');
+var $listRow = document.querySelector('.list-row');
+var fullAnime = {};
 function genreSearch(value, score) {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://api.jikan.moe/v3/search/anime?q=&genre=' + value + '&score=' + score);
@@ -22,11 +26,9 @@ function synopsis(malId) {
   xhr.open('GET', 'https://api.jikan.moe/v3/anime/' + malId);
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
-    var fullAnime = {
-      title: xhr.response.title,
-      image: xhr.response.image_url,
-      synopsis: xhr.response.synopsis
-    };
+    fullAnime.title = xhr.response.title;
+    fullAnime.image = xhr.response.image_url;
+    fullAnime.synopsis = xhr.response.synopsis;
     $resultsContainer.appendChild(genreDOMCreation(fullAnime));
   });
   xhr.send();
@@ -67,10 +69,10 @@ function genreDOMCreation(fullAnime) {
   $divTitle.appendChild($h3);
 
   var $form = document.createElement('form');
-  $form.setAttribute('class', 'row');
+  $form.setAttribute('class', 'row form');
 
   var $saveBtnDiv = document.createElement('div');
-  $saveBtnDiv.setAttribute('class', 'row justify-center not-good-btn');
+  $saveBtnDiv.setAttribute('class', 'row justify-center not-good-btn save');
   $form.appendChild($saveBtnDiv);
 
   var $saveLabel = document.createElement('label');
@@ -81,7 +83,7 @@ function genreDOMCreation(fullAnime) {
   var $saveBtn = document.createElement('input');
   $saveBtn.setAttribute('type', 'submit');
   $saveBtn.setAttribute('id', 'save');
-  $saveBtn.setAttribute('class', 'click-me refresh');
+  $saveBtn.setAttribute('class', 'click-me refresh save-me');
   $saveBtn.setAttribute('value', 'Sa...Save me');
   $saveBtnDiv.appendChild($saveLabel);
   $saveBtnDiv.appendChild($saveBtn);
@@ -112,19 +114,32 @@ function genreDOMCreation(fullAnime) {
   return $genreObject;
 }
 
-// function generateList(listObject) {
-//   var $listColumn = document.createElement('div');
-//   $listColumn.setAttribute('class', 'column list-column');
+function createAnimeList(event) {
+  if (event.target.parentElement.matches('.save')) {
+    var animeObject = {
+      ...fullAnime,
+      id: data.nextAnimeId
+    };
+    data.nextAnimeId++;
+    data.anime.unshift(animeObject);
+  }
+}
 
-//   var $listImg = document.createElement('img');
-//   $listImg.setAttribute('src', listObject.img_url);
-//   $listImg.setAttribute('class', 'list-img');
-//   $listColumn.appendChild($listImg);
+function watchListCreation(animeObject) {
+  var $listColumn = document.createElement('div');
+  $listColumn.setAttribute('class', 'column list-column');
+  var $listImg = document.createElement('img');
+  $listImg.setAttribute('src', animeObject.image);
+  $listImg.setAttribute('class', 'list-img');
+  $listColumn.appendChild($listImg);
 
-//   var $listH4 = document.createElement('h4');
-//   $listH4.setAttribute('class', 'h4');
-//   $listH4.textContent = listObject.title;
-// }
+  var $listH3 = document.createElement('h4');
+  $listH3.setAttribute('class', 'h4');
+  $listH3.textContent = animeObject.title;
+  $listColumn.appendChild($listH3);
+
+  return $listColumn;
+}
 
 function shuffle(array) {
   for (var i = 0; i < array.length; i++) {
@@ -146,14 +161,22 @@ function handleSearch(event) {
 
 function handleRefresh(event) {
   event.preventDefault();
-  $resultsContainer.innerHTML = '';
-  genreSearch($form.elements.select.value, $score.value);
-
+  if (event.target.parentElement.matches('save')) {
+    // console.log('hi');
+    submitAnime();
+  } else {
+    $resultsContainer.innerHTML = '';
+    genreSearch($form.elements.select.value, $score.value);
+  }
 }
 
-// function handleSave(event) {
-//   console.log('hi');
-// }
+function submitAnime(event) {
+  for (var i = 0; i < data.anime.length; i++) {
+    var entryAnime = watchListCreation(data.anime[i]);
+    // console.log(data.anime[i]);
+    $listRow.appendChild(entryAnime);
+  }
+}
 
 function home(event) {
   if (event.target.matches('.aw-logo') || event.target.matches('.home')) {
@@ -162,8 +185,9 @@ function home(event) {
   }
 }
 
-// $resultsContainer.addEventListener('click', handleSave);
+$resultsContainer.addEventListener('click', createAnimeList);
 $form.addEventListener('submit', handleSearch);
 $resultsContainer.addEventListener('submit', handleRefresh);
 $homeBtn.addEventListener('click', home);
 $homeBtn2.addEventListener('click', home);
+// document.addEventListener('DOMContentLoaded', submitAnime);
