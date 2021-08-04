@@ -161,11 +161,11 @@ body {
 }
 
 .aw-logo:active {
-  transform: translateY(0.25rem);
+  transform: rotate(0.5turn);
 }
 
 .logo:active {
-  transform: translateY(0.25rem);
+  transform: rotate(1turn);
 }
 
 .rating-label {
@@ -206,7 +206,6 @@ datalist > option {
   opacity: 0.8;
   margin: 15px auto;
   width: 90%;
-  height: 79vh;
   border-radius: 5px;
 }
 
