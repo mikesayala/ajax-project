@@ -3,6 +3,7 @@ body {
   background-size: contain;
   background-position-y: 40%;
   position: relative;
+  padding-bottom: 68px;
 }
 
 .anime-watchers {
