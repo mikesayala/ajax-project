@@ -251,3 +251,8 @@ datalist > option {
   text-decoration: none;
   color: #6f6f6f;
 }
+
+.trash {
+  height: 5vh;
+  margin-top: 10px;
+}

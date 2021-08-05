@@ -11,6 +11,8 @@ var $score = document.getElementById('score');
 var $listRow = document.querySelector('.list-row');
 var $watchListDesk = document.querySelector('.watch-list-desktop');
 var $watchListMobile = document.querySelector('.watch-list-mobile');
+// var $WatchListContainer = document.querySelector('.watch-list-container');
+
 function genreSearch(value, score) {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://api.jikan.moe/v3/search/anime?q=&genre=' + value + '&score=' + score);
@@ -137,10 +139,22 @@ function createAnimeList(fullAnime) {
 function watchListCreation(animeObject) {
   var $listColumn = document.createElement('div');
   $listColumn.setAttribute('class', 'column list-column');
+  $listColumn.setAttribute('data-id', animeObject.id);
+
+  var $imageTrashDiv = document.createElement('div');
+  $imageTrashDiv.setAttribute('class', 'row justify-center');
+  $listColumn.appendChild($imageTrashDiv);
+
   var $listImg = document.createElement('img');
   $listImg.setAttribute('src', animeObject.image);
   $listImg.setAttribute('class', 'list-img');
-  $listColumn.appendChild($listImg);
+  $imageTrashDiv.appendChild($listImg);
+
+  var $trash = document.createElement('img');
+  $trash.setAttribute('src', 'images/Trash.ico');
+  $trash.setAttribute('class', 'trash');
+  $trash.setAttribute('alt', 'trashcan');
+  $imageTrashDiv.appendChild($trash);
 
   var $listH4 = document.createElement('h4');
   $listH4.setAttribute('class', 'h4');
@@ -200,6 +214,13 @@ function watchListToggle(event) {
   }
 }
 
+// function handleDelete(event) {
+//   if (event.target.matches('.trash')) {
+//     console.log('hi');
+//   }
+// }
+
+// $WatchListContainer.addEventListener('click', handleDelete);
 $watchListMobile.addEventListener('click', watchListToggle);
 $watchListDesk.addEventListener('click', watchListToggle);
 $form.addEventListener('submit', handleSearch);
