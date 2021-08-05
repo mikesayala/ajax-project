@@ -11,7 +11,6 @@ var $score = document.getElementById('score');
 var $listRow = document.querySelector('.list-row');
 var $watchListDesk = document.querySelector('.watch-list-desktop');
 var $watchListMobile = document.querySelector('.watch-list-mobile');
-var fullAnime = {};
 function genreSearch(value, score) {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://api.jikan.moe/v3/search/anime?q=&genre=' + value + '&score=' + score);
@@ -29,10 +28,13 @@ function synopsis(malId) {
   xhr.open('GET', 'https://api.jikan.moe/v3/anime/' + malId);
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
-    fullAnime.title = xhr.response.title;
-    fullAnime.image = xhr.response.image_url;
-    fullAnime.synopsis = xhr.response.synopsis;
+    var fullAnime = {
+      title: xhr.response.title,
+      image: xhr.response.image_url,
+      synopsis: xhr.response.synopsis
+    };
     $resultsContainer.appendChild(genreDOMCreation(fullAnime));
+    $resultsContainer.addEventListener('click', function () { createAnimeList(fullAnime); });
   });
   xhr.send();
 }
@@ -117,10 +119,12 @@ function genreDOMCreation(fullAnime) {
   return $genreObject;
 }
 
-function createAnimeList(event) {
+function createAnimeList(fullAnime) {
   if (event.target.parentElement.matches('.save')) {
     var animeObject = {
-      ...fullAnime,
+      title: fullAnime.title,
+      image: fullAnime.image,
+      synopsis: fullAnime.synopsis,
       id: data.nextAnimeId
     };
     data.nextAnimeId++;
@@ -131,8 +135,6 @@ function createAnimeList(event) {
 }
 
 function watchListCreation(animeObject) {
-  // debugger;
-  // console.log(animeObject);
   var $listColumn = document.createElement('div');
   $listColumn.setAttribute('class', 'column list-column');
   var $listImg = document.createElement('img');
@@ -175,7 +177,7 @@ function handleSearch(event) {
 function handleRefresh(event) {
   event.preventDefault();
   if (event.target.matches('.save-me')) {
-    submitAnime();
+    submitAnime(data.anime[0]);
   } else if (event.target.matches('.random')) {
     $resultsContainer.innerHTML = '';
     genreSearch($form.elements.select.value, $score.value);
@@ -200,7 +202,6 @@ function watchListToggle(event) {
 
 $watchListMobile.addEventListener('click', watchListToggle);
 $watchListDesk.addEventListener('click', watchListToggle);
-$resultsContainer.addEventListener('click', createAnimeList);
 $form.addEventListener('submit', handleSearch);
 $resultsContainer.addEventListener('click', handleRefresh);
 $homeBtn.addEventListener('click', home);
