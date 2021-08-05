@@ -3,6 +3,7 @@ body {
   background-size: contain;
   background-position-y: 40%;
   position: relative;
+  padding-bottom: 68px;
 }
 
 .anime-watchers {
@@ -110,7 +111,7 @@ body {
   padding: 10px 25px;
   border-radius: 3px;
   border: none;
-  font-size: 18px;
+  font-size: 11px;
 }
 
 .height {
@@ -157,6 +158,7 @@ body {
   font-family: 'Luckiest Guy', sans-serif;
   color: white;
   margin-top: 15px;
+  font-size: 13px;
 }
 
 .aw-logo:active {
@@ -198,4 +200,54 @@ datalist > option {
   margin: 19px auto;
   width: 90%;
   font-family: 'PT sans', sans-serif;
+}
+
+.watch-list-container {
+  background-color: #4d4d4d;
+  opacity: 0.8;
+  margin: 15px auto;
+  width: 90%;
+  border-radius: 5px;
+}
+
+.list-header {
+  color: #4d4d4d;
+  font-family: 'Luckiest Guy', sans-serif;
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+.list-row {
+  flex-wrap: wrap;
+}
+
+.list-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list-img {
+  width: 40%;
+  margin: 10px 10px 0 10px;
+  border-radius: 5px;
+}
+
+.h4 {
+  margin-top: 10px;
+  margin-left: 5px;
+  color: white;
+  font-family: 'Luckiest Guy', sans-serif;
+}
+
+.watch-list-desktop,
+.watch-list-mobile {
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.watch-list-desktop:visited,
+.watch-list-mobile:visited {
+  text-decoration: none;
+  color: #6f6f6f;
 }
