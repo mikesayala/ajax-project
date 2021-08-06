@@ -11,8 +11,9 @@ var $score = document.getElementById('score');
 var $listRow = document.querySelector('.list-row');
 var $watchListDesk = document.querySelector('.watch-list-desktop');
 var $watchListMobile = document.querySelector('.watch-list-mobile');
-// var $WatchListContainer = document.querySelector('.watch-list-container');
-
+var $WatchListContainer = document.querySelector('.watch-list-container');
+var currentId = null;
+var $noAnime = document.querySelector('.no-anime');
 function genreSearch(value, score) {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://api.jikan.moe/v3/search/anime?q=&genre=' + value + '&score=' + score);
@@ -36,7 +37,6 @@ function synopsis(malId) {
       synopsis: xhr.response.synopsis
     };
     $resultsContainer.appendChild(genreDOMCreation(fullAnime));
-    $resultsContainer.addEventListener('click', function () { createAnimeList(fullAnime); });
   });
   xhr.send();
 }
@@ -90,10 +90,12 @@ function genreDOMCreation(fullAnime) {
   var $saveBtn = document.createElement('input');
   $saveBtn.setAttribute('type', 'submit');
   $saveBtn.setAttribute('id', 'save');
+  $saveBtn.setAttribute('data-value', JSON.stringify(fullAnime));
   $saveBtn.setAttribute('class', 'click-me refresh save-me');
   $saveBtn.setAttribute('value', 'Sa...Save me');
   $saveBtnDiv.appendChild($saveLabel);
   $saveBtnDiv.appendChild($saveBtn);
+  $saveBtn.addEventListener('click', createAnimeList);
 
   var $notGoodBtn = document.createElement('div');
   $notGoodBtn.setAttribute('class', 'row justify-center not-good-btn');
@@ -121,7 +123,8 @@ function genreDOMCreation(fullAnime) {
   return $genreObject;
 }
 
-function createAnimeList(fullAnime) {
+function createAnimeList(event) {
+  const fullAnime = JSON.parse(event.target.getAttribute('data-value'));
   if (event.target.parentElement.matches('.save')) {
     var animeObject = {
       title: fullAnime.title,
@@ -132,14 +135,13 @@ function createAnimeList(fullAnime) {
     data.nextAnimeId++;
     data.anime.unshift(animeObject);
     $listRow.innerHTML = '';
-    submitAnime();
   }
 }
 
 function watchListCreation(animeObject) {
   var $listColumn = document.createElement('div');
-  $listColumn.setAttribute('class', 'column list-column');
-  $listColumn.setAttribute('data-id', animeObject.id);
+  $listColumn.setAttribute('class', 'column list-column data-id');
+  $listColumn.setAttribute('data-anime-id', animeObject.id);
 
   var $imageTrashDiv = document.createElement('div');
   $imageTrashDiv.setAttribute('class', 'row justify-center');
@@ -212,19 +214,57 @@ function watchListToggle(event) {
     $resultsContainer.classList.add('hidden');
     $listContainer.classList.remove('hidden');
   }
+  if (data.anime.length === 0) {
+    $noAnime.classList.remove('hidden');
+  }
+}
+var $no = document.querySelector('.no');
+var $yes = document.querySelector('.yes');
+var $deleteEntry = document.querySelector('.delete-entry');
+function deleteModal(event) {
+  // console.log('event.target', event.target);
+  if (event.target.matches('.trash')) {
+    $deleteEntry.classList.remove('hidden');
+    $WatchListContainer.classList.remove('opacity');
+    var dataId = event.target.closest('div.data-id');
+    var closestDataId = dataId;
+    currentId = closestDataId.getAttribute('data-anime-id');
+  }
 }
 
-// function handleDelete(event) {
-//   if (event.target.matches('.trash')) {
-//     console.log('hi');
-//   }
-// }
+function handleNo(event) {
+  $deleteEntry.classList.toggle('hidden');
+  $WatchListContainer.classList.add('opacity');
+}
 
-// $WatchListContainer.addEventListener('click', handleDelete);
+function handleYes(event) {
+  var $dataIdList = document.querySelectorAll('.data-id');
+  if ($dataIdList.length === 0) {
+    return;
+  }
+  for (var nextAnimeId = 0; nextAnimeId < data.anime.length; nextAnimeId++) {
+    if (data.anime[nextAnimeId].id === parseInt(currentId)) {
+      data.anime.splice(nextAnimeId, 1);
+    }
+  }
+  $listRow.innerHTML = '';
+  submitAnime();
+  $deleteEntry.classList.toggle('hidden');
+  $WatchListContainer.classList.remove('hidden');
+  $WatchListContainer.classList.add('opacity');
+}
+
+function onLoad(event) {
+  submitAnime();
+}
+
+$yes.addEventListener('click', handleYes);
+$no.addEventListener('click', handleNo);
+$WatchListContainer.addEventListener('click', deleteModal);
 $watchListMobile.addEventListener('click', watchListToggle);
 $watchListDesk.addEventListener('click', watchListToggle);
 $form.addEventListener('submit', handleSearch);
 $resultsContainer.addEventListener('click', handleRefresh);
 $homeBtn.addEventListener('click', home);
 $homeBtn2.addEventListener('click', home);
-document.addEventListener('DOMContentLoaded', submitAnime);
+document.addEventListener('DOMContentLoaded', onLoad);

@@ -18,6 +18,20 @@
     rel="stylesheet">
 </head>
 <body>
+  <div class="delete-entry hidden">
+    <div class="modal-background"></div>
+    <div class="modal-container">
+      <div class="row justify-center">
+        <div class="modal">
+          <p class="modal-text">Did you really finish this?</p>
+          <div class="row justify-around">
+            <input type="submit" value="No" class=" no modal-buttons right-10">
+            <input type="submit" value="Yes" class=" yes modal-buttons left-10">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <header class="header">
     <div class="container header-container row">
       <img src="images/AnimeWatchers.png" alt="anime watchers logo" class="aw-logo logo">
@@ -113,7 +127,9 @@
       <div class="row justify-center list-header">
         Watch List
       </div>
-      <div class="watch-list-container">
+      <h3 class="row data no-anime justify-center hidden">
+      Its not like you had anything to watch</h3>
+      <div class="watch-list-container opacity">
         <div class="list-object">
           <div class="row list-row">
           </div>

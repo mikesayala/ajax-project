@@ -37,7 +37,7 @@
 
 @media screen and (min-width: 360px) {
   .logo {
-    width: 20%;
+    width: 25%;
     height: 11vh;
   }
 
@@ -89,7 +89,7 @@
 
 @media screen and (min-width: 411px) {
   .logo {
-    width: 18%;
+    width: 25%;
     height: 11vh;
   }
 
@@ -144,7 +144,7 @@
 
 @media screen and (min-width: 768px) {
   .aw-logo {
-    width: 10%;
+    width: 13%;
   }
 
   .mobile-logo {
@@ -152,7 +152,7 @@
   }
 
   .width-50 {
-    width: 43%;
+    width: 35%;
     margin: auto;
   }
 
@@ -193,6 +193,12 @@
   }
 }
 
+@media screen and (min-width: 980px) {
+  .width-50 {
+    width: 29%;
+  }
+}
+
 @media screen and (min-width: 1100px) {
   .aw-logo {
     width: 7%;
@@ -207,7 +213,7 @@
   }
 
   .width-50 {
-    width: 30%;
+    width: 26%;
     margin: auto;
   }
 
@@ -220,6 +226,12 @@
   }
 }
 
+@media screen and (min-width: 1144px) {
+  .width-50 {
+    width: 25%;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .not-good-btn {
     width: 17%;
@@ -228,6 +240,12 @@
   .width-50 {
     width: 27%;
     margin: auto;
+  }
+}
+
+@media screen and (min-width: 1271px) {
+  .width-50 {
+    width: 22%;
   }
 }
 
