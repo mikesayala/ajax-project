@@ -152,7 +152,7 @@
   }
 
   .width-50 {
-    width: 35%;
+    width: 37%;
     margin: auto;
   }
 
@@ -190,6 +190,12 @@
 @media screen and (min-width: 846px) {
   .aw-logo {
     width: 8%;
+  }
+}
+
+@media screen and (min-width: 928px) {
+  .width-50 {
+    width: 31%;
   }
 }
 
@@ -265,11 +271,35 @@
   }
 
   .width-50 {
-    width: 23%;
+    width: 20%;
     margin: auto;
   }
 
   .synopsis {
     font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1492px) {
+  .width-50 {
+    width: 19%;
+  }
+}
+
+@media screen and (min-width: 1716px) {
+  .width-50 {
+    width: 17%;
+  }
+}
+
+@media screen and (min-width: 1806px) {
+  .width-50 {
+    width: 16%;
+  }
+}
+
+@media screen and (min-width: 2144px) {
+  .width-50 {
+    width: 13%;
   }
 }

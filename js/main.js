@@ -91,7 +91,7 @@ function genreDOMCreation(fullAnime) {
   $saveBtn.setAttribute('type', 'submit');
   $saveBtn.setAttribute('id', 'save');
   $saveBtn.setAttribute('data-value', JSON.stringify(fullAnime));
-  $saveBtn.setAttribute('class', 'click-me refresh save-me');
+  $saveBtn.setAttribute('class', 'click-me refresh save-me button');
   $saveBtn.setAttribute('value', 'Sa...Save me');
   $saveBtnDiv.appendChild($saveLabel);
   $saveBtnDiv.appendChild($saveBtn);
@@ -112,7 +112,7 @@ function genreDOMCreation(fullAnime) {
   $input.setAttribute('type', 'submit');
   $input.setAttribute('id', 'repeat');
   $input.setAttribute('value', 'Cli-click me');
-  $input.setAttribute('class', 'click-me refresh random');
+  $input.setAttribute('class', 'click-me refresh button random');
 
   $notGoodBtn.appendChild($input);
   $rowResult.appendChild($buttonRow);
@@ -124,7 +124,7 @@ function genreDOMCreation(fullAnime) {
 }
 
 function createAnimeList(event) {
-  const fullAnime = JSON.parse(event.target.getAttribute('data-value'));
+  var fullAnime = JSON.parse(event.target.getAttribute('data-value'));
   if (event.target.parentElement.matches('.save')) {
     var animeObject = {
       title: fullAnime.title,
@@ -193,6 +193,7 @@ function handleSearch(event) {
 function handleRefresh(event) {
   event.preventDefault();
   if (event.target.matches('.save-me')) {
+    $noAnime.classList.toggle('hidden');
     submitAnime(data.anime[0]);
   } else if (event.target.matches('.random')) {
     $resultsContainer.innerHTML = '';
@@ -249,6 +250,9 @@ function handleYes(event) {
   }
   $listRow.innerHTML = '';
   submitAnime();
+  if (data.anime.length === 0) {
+    $noAnime.classList.remove('hidden');
+  }
   $deleteEntry.classList.toggle('hidden');
   $WatchListContainer.classList.remove('hidden');
   $WatchListContainer.classList.add('opacity');
