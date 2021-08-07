@@ -35,10 +35,6 @@ body {
   justify-content: space-evenly;
 }
 
-.justify-end {
-  justify-content: flex-end;
-}
-
 .tint {
   width: 100%;
   height: 90vh;
@@ -83,14 +79,12 @@ body {
 
 .aw-logo {
   margin-left: 10px;
+  transition: 0.3s;
 }
 
 .logo {
   margin-left: 10px;
-}
-
-.option-col {
-  height: 20vh;
+  transition: 0.3s;
 }
 
 .genre-select {
@@ -115,7 +109,7 @@ body {
 }
 
 .height {
-  height: 62vh;
+  height: 53vh;
 }
 
 .hidden {
@@ -204,7 +198,6 @@ datalist > option {
 
 .watch-list-container {
   background-color: #4d4d4d;
-  opacity: 0.8;
   margin: 15px auto;
   width: 90%;
   border-radius: 5px;
@@ -244,10 +237,82 @@ datalist > option {
 .watch-list-mobile {
   font-size: 24px;
   text-decoration: none;
+  transition: 0.1s;
+}
+
+.watch-list-desktop:active,
+.watch-list-mobile:active {
+  transform: translateY(0.25rem);
+  color: #cceabb;
 }
 
 .watch-list-desktop:visited,
 .watch-list-mobile:visited {
   text-decoration: none;
   color: #6f6f6f;
+}
+
+.trash {
+  height: 5vh;
+  margin-top: 10px;
+  transition: 200ms;
+}
+
+.modal {
+  position: fixed;
+  margin: auto;
+  background-color: #c4c4c4;
+  font-family: 'Luckiest Guy', sans-serif;
+  top: 200px;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.modal-background {
+  position: fixed;
+  background: black;
+  opacity: 0.8;
+  width: 100%;
+  height: 100vh;
+}
+
+.left-10 {
+  margin-left: 10px;
+}
+
+.right-10 {
+  margin-right: 10px;
+}
+
+.modal-text {
+  margin-bottom: 30px;
+}
+
+.opacity {
+  opacity: 0.8;
+}
+
+.modal-buttons {
+  font-family: 'Luckiest Guy', sans-serif;
+  background-color: #cceabb;
+  color: black;
+  padding: 10px 25px;
+  border-radius: 3px;
+  border: none;
+  font-size: 11px;
+}
+
+.no-anime {
+  flex-direction: column-reverse;
+  text-align: center;
+}
+
+.button {
+  transition: 0.1s;
+}
+
+.button:active {
+  transform: translateY(0.15rem);
+  background-color: #a0a0a0;
+  color: #cceabb;
 }

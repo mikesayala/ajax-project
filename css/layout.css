@@ -37,7 +37,7 @@
 
 @media screen and (min-width: 360px) {
   .logo {
-    width: 20%;
+    width: 25%;
     height: 11vh;
   }
 
@@ -85,11 +85,16 @@
   .list-column {
     flex-basis: 50%;
   }
+
+  .no-anime {
+    font-size: 16px;
+    height: 40vh;
+  }
 }
 
 @media screen and (min-width: 411px) {
   .logo {
-    width: 18%;
+    width: 20%;
     height: 11vh;
   }
 
@@ -105,6 +110,12 @@
 
   .img-result {
     width: 138px;
+  }
+}
+
+@media screen and (min-width: 484px) {
+  .logo {
+    width: 17%;
   }
 }
 
@@ -133,6 +144,10 @@
   .margin-top {
     margin-top: 5px;
   }
+
+  .no-anime {
+    font-size: 20px;
+  }
 }
 
 @media screen and (min-width: 690px) {
@@ -144,7 +159,7 @@
 
 @media screen and (min-width: 768px) {
   .aw-logo {
-    width: 10%;
+    width: 13%;
   }
 
   .mobile-logo {
@@ -152,7 +167,7 @@
   }
 
   .width-50 {
-    width: 43%;
+    width: 37%;
     margin: auto;
   }
 
@@ -185,11 +200,28 @@
   .list-column {
     flex-basis: 25%;
   }
+
+  .no-anime {
+    font-size: 25px;
+    height: 25vh;
+  }
 }
 
 @media screen and (min-width: 846px) {
   .aw-logo {
     width: 8%;
+  }
+}
+
+@media screen and (min-width: 928px) {
+  .width-50 {
+    width: 31%;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .width-50 {
+    width: 29%;
   }
 }
 
@@ -207,7 +239,7 @@
   }
 
   .width-50 {
-    width: 30%;
+    width: 26%;
     margin: auto;
   }
 
@@ -220,6 +252,12 @@
   }
 }
 
+@media screen and (min-width: 1144px) {
+  .width-50 {
+    width: 25%;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .not-good-btn {
     width: 17%;
@@ -228,6 +266,12 @@
   .width-50 {
     width: 27%;
     margin: auto;
+  }
+}
+
+@media screen and (min-width: 1271px) {
+  .width-50 {
+    width: 22%;
   }
 }
 
@@ -247,11 +291,35 @@
   }
 
   .width-50 {
-    width: 23%;
+    width: 20%;
     margin: auto;
   }
 
   .synopsis {
     font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1492px) {
+  .width-50 {
+    width: 19%;
+  }
+}
+
+@media screen and (min-width: 1716px) {
+  .width-50 {
+    width: 17%;
+  }
+}
+
+@media screen and (min-width: 1806px) {
+  .width-50 {
+    width: 16%;
+  }
+}
+
+@media screen and (min-width: 2144px) {
+  .width-50 {
+    width: 13%;
   }
 }
