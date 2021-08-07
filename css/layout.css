@@ -85,11 +85,16 @@
   .list-column {
     flex-basis: 50%;
   }
+
+  .no-anime {
+    font-size: 16px;
+    height: 40vh;
+  }
 }
 
 @media screen and (min-width: 411px) {
   .logo {
-    width: 25%;
+    width: 20%;
     height: 11vh;
   }
 
@@ -105,6 +110,12 @@
 
   .img-result {
     width: 138px;
+  }
+}
+
+@media screen and (min-width: 484px) {
+  .logo {
+    width: 17%;
   }
 }
 
@@ -132,6 +143,10 @@
 
   .margin-top {
     margin-top: 5px;
+  }
+
+  .no-anime {
+    font-size: 20px;
   }
 }
 
@@ -184,6 +199,11 @@
 
   .list-column {
     flex-basis: 25%;
+  }
+
+  .no-anime {
+    font-size: 25px;
+    height: 25vh;
   }
 }
 

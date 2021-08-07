@@ -193,7 +193,7 @@ function handleSearch(event) {
 function handleRefresh(event) {
   event.preventDefault();
   if (event.target.matches('.save-me')) {
-    $noAnime.classList.toggle('hidden');
+    $noAnime.classList.add('hidden');
     submitAnime(data.anime[0]);
   } else if (event.target.matches('.random')) {
     $resultsContainer.innerHTML = '';

@@ -35,10 +35,6 @@ body {
   justify-content: space-evenly;
 }
 
-.justify-end {
-  justify-content: flex-end;
-}
-
 .tint {
   width: 100%;
   height: 90vh;
@@ -91,10 +87,6 @@ body {
   transition: 0.3s;
 }
 
-.option-col {
-  height: 20vh;
-}
-
 .genre-select {
   background-color: #c4c4c4;
   color: white;
@@ -117,7 +109,7 @@ body {
 }
 
 .height {
-  height: 62vh;
+  height: 53vh;
 }
 
 .hidden {
@@ -245,7 +237,7 @@ datalist > option {
 .watch-list-mobile {
   font-size: 24px;
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.1s;
 }
 
 .watch-list-desktop:active,
@@ -311,8 +303,6 @@ datalist > option {
 }
 
 .no-anime {
-  font-size: 16px;
-  height: 40vh;
   flex-direction: column-reverse;
   text-align: center;
 }
