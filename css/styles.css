@@ -316,3 +316,7 @@ datalist > option {
   background-color: #a0a0a0;
   color: #cceabb;
 }
+
+.pointer {
+  cursor: pointer;
+}
