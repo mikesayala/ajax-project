@@ -253,7 +253,7 @@ datalist > option {
 }
 
 .trash {
-  height: 5vh;
+  height: 3rem;
   margin-top: 10px;
   transition: 200ms;
 }

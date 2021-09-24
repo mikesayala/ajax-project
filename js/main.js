@@ -87,12 +87,12 @@ function genreDOMCreation(fullAnime) {
   $saveLabel.setAttribute('class', 'not-good');
   $saveLabel.textContent = 'Binge Worthy?';
 
-  var $saveBtn = document.createElement('input');
-  $saveBtn.setAttribute('type', 'submit');
+  var $saveBtn = document.createElement('button');
   $saveBtn.setAttribute('id', 'save');
   $saveBtn.setAttribute('data-value', JSON.stringify(fullAnime));
   $saveBtn.setAttribute('class', 'click-me refresh save-me button');
   $saveBtn.setAttribute('value', 'Sa...Save me');
+  $saveBtn.textContent = 'Sa...Save me';
   $saveBtnDiv.appendChild($saveLabel);
   $saveBtnDiv.appendChild($saveBtn);
   $saveBtn.addEventListener('click', createAnimeList);
@@ -108,11 +108,11 @@ function genreDOMCreation(fullAnime) {
 
   $notGoodBtn.appendChild($label);
 
-  var $input = document.createElement('input');
-  $input.setAttribute('type', 'submit');
+  var $input = document.createElement('button');
   $input.setAttribute('id', 'repeat');
   $input.setAttribute('value', 'Cli-click me');
-  $input.setAttribute('class', 'click-me refresh button random');
+  $input.setAttribute('class', 'click-me refresh pointer button random');
+  $input.textContent = 'Cli-click me';
 
   $notGoodBtn.appendChild($input);
   $rowResult.appendChild($buttonRow);
@@ -154,7 +154,7 @@ function watchListCreation(animeObject) {
 
   var $trash = document.createElement('img');
   $trash.setAttribute('src', 'images/Trash.ico');
-  $trash.setAttribute('class', 'trash');
+  $trash.setAttribute('class', 'trash pointer');
   $trash.setAttribute('alt', 'trashcan');
   $imageTrashDiv.appendChild($trash);
 
