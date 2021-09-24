@@ -12,16 +12,20 @@ var $listRow = document.querySelector('.list-row');
 var $watchListDesk = document.querySelector('.watch-list-desktop');
 var $watchListMobile = document.querySelector('.watch-list-mobile');
 var $WatchListContainer = document.querySelector('.watch-list-container');
+var $heart = document.querySelector('.lds-heart');
+
 var currentId = null;
 var $noAnime = document.querySelector('.no-anime');
 function genreSearch(value, score) {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://api.jikan.moe/v3/search/anime?q=&genre=' + value + '&score=' + score);
   xhr.responseType = 'json';
+  $heart.className = 'lds-heart center';
   xhr.addEventListener('load', function () {
     var randomAnime = shuffle(xhr.response.results);
     var resultAnime = randomAnime[0];
     synopsis(resultAnime.mal_id);
+    $heart.className = 'hidden';
   });
   xhr.send();
 }

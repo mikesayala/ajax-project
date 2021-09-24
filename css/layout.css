@@ -90,6 +90,12 @@
     font-size: 16px;
     height: 40vh;
   }
+
+  .center {
+    position: absolute;
+    left: 9rem;
+    top: 15rem;
+  }
 }
 
 @media screen and (min-width: 411px) {
@@ -111,11 +117,23 @@
   .img-result {
     width: 138px;
   }
+
+  .center {
+    position: absolute;
+    left: 10rem;
+    top: 15rem;
+  }
 }
 
 @media screen and (min-width: 484px) {
   .logo {
     width: 6rem;
+  }
+
+  .center {
+    position: absolute;
+    left: 12rem;
+    top: 15rem;
   }
 }
 
@@ -126,6 +144,12 @@
 
   .title {
     font-size: 24px;
+  }
+
+  .center {
+    position: absolute;
+    left: 15rem;
+    top: 15rem;
   }
 }
 
@@ -154,6 +178,12 @@
   .logo {
     width: 6rem;
     height: 11vh;
+  }
+
+  .center {
+    position: absolute;
+    left: 19rem;
+    top: 15rem;
   }
 }
 
@@ -205,17 +235,35 @@
     font-size: 25px;
     height: 25vh;
   }
+
+  .center {
+    position: absolute;
+    left: 22rem;
+    top: 20rem;
+  }
 }
 
 @media screen and (min-width: 846px) {
   .aw-logo {
     width: 6rem;
   }
+
+  .center {
+    position: absolute;
+    left: 24rem;
+    top: 20rem;
+  }
 }
 
 @media screen and (min-width: 928px) {
   .width-50 {
     width: 20rem;
+  }
+
+  .center {
+    position: absolute;
+    left: 26rem;
+    top: 20rem;
   }
 }
 
@@ -249,6 +297,12 @@
 
   .synopsis {
     font-size: 14px;
+  }
+
+  .center {
+    position: absolute;
+    left: 32rem;
+    top: 20rem;
   }
 }
 
@@ -297,6 +351,12 @@
 
   .synopsis {
     font-size: 16px;
+  }
+
+  .center {
+    position: absolute;
+    left: 41rem;
+    top: 20rem;
   }
 }
 
