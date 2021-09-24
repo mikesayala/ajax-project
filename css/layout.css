@@ -59,7 +59,7 @@
   }
 
   .not-good-btn {
-    width: 68%;
+    width: 8rem;
   }
 
   .title {
@@ -121,7 +121,7 @@
 
 @media screen and (min-width: 549px) {
   .not-good-btn {
-    width: 38%;
+    width: 8rem;
   }
 
   .title {
@@ -176,7 +176,7 @@
   }
 
   .not-good-btn {
-    width: 27%;
+    width: 8rem;
   }
 
   .title {
@@ -231,7 +231,7 @@
   }
 
   .not-good-btn {
-    width: 33%;
+    width: 8rem;
   }
 
   .title {
@@ -260,7 +260,7 @@
 
 @media screen and (min-width: 1200px) {
   .not-good-btn {
-    width: 17%;
+    width: 8rem;
   }
 
   .width-50 {
@@ -287,7 +287,7 @@
   }
 
   .not-good-btn {
-    width: 15%;
+    width: 8rem;
   }
 
   .width-50 {
