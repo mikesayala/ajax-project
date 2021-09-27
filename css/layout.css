@@ -96,6 +96,18 @@
     left: 9rem;
     top: 15rem;
   }
+
+  .empty-results {
+    position: absolute;
+    left: 1.5rem;
+    top: 15rem;
+  }
+
+  .lost {
+    position: absolute;
+    left: 1.5rem;
+    top: 15rem;
+  }
 }
 
 @media screen and (min-width: 411px) {
@@ -123,6 +135,17 @@
     left: 10rem;
     top: 15rem;
   }
+
+  .empty-results {
+    position: absolute;
+    left: 1.5rem;
+  }
+
+  .lost {
+    position: absolute;
+    left: 1.5rem;
+    top: 15rem;
+  }
 }
 
 @media screen and (min-width: 484px) {
@@ -133,6 +156,18 @@
   .center {
     position: absolute;
     left: 12rem;
+    top: 15rem;
+  }
+
+  .empty-results {
+    position: absolute;
+    right: 1.5rem;
+    top: 15rem;
+  }
+
+  .lost {
+    position: absolute;
+    right: 1.5rem;
     top: 15rem;
   }
 }
@@ -149,6 +184,18 @@
   .center {
     position: absolute;
     left: 15rem;
+    top: 15rem;
+  }
+
+  .empty-results {
+    position: absolute;
+    right: 2rem;
+    top: 15rem;
+  }
+
+  .lost {
+    position: absolute;
+    right: 2rem;
     top: 15rem;
   }
 }
@@ -171,6 +218,18 @@
 
   .no-anime {
     font-size: 20px;
+  }
+
+  .empty-results {
+    position: absolute;
+    right: 2rem;
+    top: 15rem;
+  }
+
+  .lost {
+    position: absolute;
+    right: 2rem;
+    top: 15rem;
   }
 }
 
@@ -241,6 +300,18 @@
     left: 22rem;
     top: 20rem;
   }
+
+  .empty-results {
+    position: absolute;
+    right: 2rem;
+    top: 16rem;
+  }
+
+  .lost {
+    position: absolute;
+    right: 2rem;
+    top: 16rem;
+  }
 }
 
 @media screen and (min-width: 846px) {
@@ -252,6 +323,18 @@
     position: absolute;
     left: 24rem;
     top: 20rem;
+  }
+
+  .empty-results {
+    position: absolute;
+    right: 2rem;
+    top: 16rem;
+  }
+
+  .lost {
+    position: absolute;
+    right: 2rem;
+    top: 16rem;
   }
 }
 
@@ -303,6 +386,18 @@
     position: absolute;
     left: 32rem;
     top: 20rem;
+  }
+
+  .empty-results {
+    position: absolute;
+    right: 2rem;
+    top: 16rem;
+  }
+
+  .lost {
+    position: absolute;
+    right: 2rem;
+    top: 16rem;
   }
 }
 
@@ -357,6 +452,18 @@
     position: absolute;
     left: 41rem;
     top: 20rem;
+  }
+
+  .empty-results {
+    position: absolute;
+    right: 2rem;
+    top: 16rem;
+  }
+
+  .lost {
+    position: absolute;
+    right: 2rem;
+    top: 16rem;
   }
 }
 

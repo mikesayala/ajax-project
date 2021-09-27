@@ -1,30 +1,40 @@
 /* global data */
 /* exported data */
 
-var $form = document.querySelector('.form');
-var $resultsContainer = document.querySelector('.results-container');
-var $formContainer = document.querySelector('.form-container');
-var $listContainer = document.querySelector('.list-container');
-var $homeBtn = document.querySelector('.aw-logo');
-var $homeBtn2 = document.querySelector('.home');
-var $score = document.getElementById('score');
-var $listRow = document.querySelector('.list-row');
-var $watchListDesk = document.querySelector('.watch-list-desktop');
-var $watchListMobile = document.querySelector('.watch-list-mobile');
-var $WatchListContainer = document.querySelector('.watch-list-container');
-var $heart = document.querySelector('.lds-heart');
+const $form = document.querySelector('.form');
+const $resultsContainer = document.querySelector('.results-container');
+const $formContainer = document.querySelector('.form-container');
+const $listContainer = document.querySelector('.list-container');
+const $homeBtn = document.querySelector('.aw-logo');
+const $homeBtn2 = document.querySelector('.home');
+const $score = document.getElementById('score');
+const $listRow = document.querySelector('.list-row');
+const $watchListDesk = document.querySelector('.watch-list-desktop');
+const $watchListMobile = document.querySelector('.watch-list-mobile');
+const $WatchListContainer = document.querySelector('.watch-list-container');
+const $heart = document.querySelector('.lds-heart');
+const $noEntries = document.querySelector('.empty-results');
+const $lost = document.querySelector('.lost');
 
-var currentId = null;
-var $noAnime = document.querySelector('.no-anime');
+let currentId = null;
+const $noAnime = document.querySelector('.no-anime');
 function genreSearch(value, score) {
-  var xhr = new XMLHttpRequest();
+  const xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://api.jikan.moe/v3/search/anime?q=&genre=' + value + '&score=' + score);
   xhr.responseType = 'json';
   $heart.className = 'lds-heart center';
   xhr.addEventListener('load', function () {
-    var randomAnime = shuffle(xhr.response.results);
-    var resultAnime = randomAnime[0];
+    if (xhr.status === 404) {
+      $noEntries.classList.toggle('hidden');
+      $heart.className = 'hidden';
+    }
+    const randomAnime = shuffle(xhr.response.results);
+    const resultAnime = randomAnime[0];
     synopsis(resultAnime.mal_id);
+    $heart.className = 'hidden';
+  });
+  xhr.addEventListener('error', () => {
+    $lost.classList.toggle('hidden');
     $heart.className = 'hidden';
   });
   xhr.send();
@@ -210,6 +220,7 @@ function home(event) {
     $resultsContainer.classList.add('hidden');
     $listContainer.classList.add('hidden');
     $formContainer.classList.remove('hidden');
+    $noEntries.classList.add('hidden');
   }
 }
 

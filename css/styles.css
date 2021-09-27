@@ -388,3 +388,18 @@ datalist > option {
 .hiding {
   display: none;
 }
+
+.empty-results {
+  color: white;
+  font-family: 'Luckiest Guy', sans-serif;
+}
+
+.lost {
+  color: white;
+  font-family: 'Luckiest Guy', sans-serif;
+}
+
+.lost-h2 {
+  text-align: center;
+  width: 80%;
+}
