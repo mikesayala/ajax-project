@@ -25,15 +25,15 @@
         <div class="modal">
           <p class="modal-text">Did you really finish this?</p>
           <div class="row justify-around">
-            <input type="submit" value="No" class=" no modal-buttons right-10">
-            <input type="submit" value="Yes" class=" yes modal-buttons left-10">
+            <input type="submit" value="No" class=" no modal-buttons pointer right-10">
+            <input type="submit" value="Yes" class=" yes modal-buttons pointer left-10">
           </div>
         </div>
       </div>
     </div>
   </div>
   <header class="header">
-    <div class="container header-container row">
+    <div class="container pointer header-container row">
       <img src="images/AnimeWatchers.png" alt="anime watchers logo" class="aw-logo logo">
       <h2 class="anime-watchers">Anime<br />Watchers</h2>
       <a href="#" class="anime-watchers watch-list-desktop">Watch<br />list</a>
@@ -51,7 +51,7 @@
             <div>
               <label for="score" class="rating-label">Anime Score</label>
             </div>
-           <input type="range" id="score" class="score" list="number" name="score" min="0" max="10" value="0" step="1">
+           <input type="range" id="score" class="score pointer" list="number" name="score" min="0" max="10" value="0" step="1">
             <div>
               <datalist id="number" class="data">
                 <option value="0" label="0"></option>
@@ -68,7 +68,7 @@
               </datalist>
             </div>
           </div>
-          <select name="select" id="genre" class="genre-select">
+          <select name="select" id="genre" class="pointer genre-select">
             <option value="0">Genre</option>
             <option value="1">Action</option>
             <option value="2">Adventure</option>
@@ -114,14 +114,25 @@
             <option value="42">Seinen</option>
             <option value="43">Josei</option>
           </select>
-          <input type="submit" value="Cli-click me" class="click-me button">
+          <button value="Cli-click me" class="click-me pointer button">Cli-click me</button>
         </div>
       </div>
      </form>
     </div>
+    <div class="row justify-center">
+      <div class="lds-heart row justify-center hiding">
+        <div></div>
+      </div>
+    </div>
     <div class="container results-container hidden">
       <div class="genre-object">
       </div>
+    </div>
+    <div class="row empty-results justify-center hidden">
+      <h2 class="lost-h2">So-sorry that search came up empty</h2>
+    </div>
+    <div class="row lost justify-center hidden">
+      <h2 class="lost-h2">Sorry, there was an error connecting to the network, check your connection and try again!</h2>
     </div>
     <div class="list-container hidden">
       <div class="row justify-center list-header">
@@ -138,8 +149,8 @@
     </div>
   </main>
   <div class="mobile-logo">
-    <div class="container footer-container row">
-      <img src="images/AnimeWatchers.png" alt="anime watchers logo" class="logo home">
+    <div class="container pointer footer-container row">
+      <img src="images/AnimeWatchers.png" alt="anime watchers logo" class="logo pointer home">
       <h2 class="anime-watchers">Anime<br />Watchers</h2>
       <a href="#" class="anime-watchers watch-list-mobile">Watch<br />list</a>
     </div>

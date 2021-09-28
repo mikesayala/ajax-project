@@ -1,27 +1,45 @@
 /* global data */
 /* exported data */
 
-var $form = document.querySelector('.form');
-var $resultsContainer = document.querySelector('.results-container');
-var $formContainer = document.querySelector('.form-container');
-var $listContainer = document.querySelector('.list-container');
-var $homeBtn = document.querySelector('.aw-logo');
-var $homeBtn2 = document.querySelector('.home');
-var $score = document.getElementById('score');
-var $listRow = document.querySelector('.list-row');
-var $watchListDesk = document.querySelector('.watch-list-desktop');
-var $watchListMobile = document.querySelector('.watch-list-mobile');
-var $WatchListContainer = document.querySelector('.watch-list-container');
-var currentId = null;
-var $noAnime = document.querySelector('.no-anime');
+const $form = document.querySelector('.form');
+const $resultsContainer = document.querySelector('.results-container');
+const $formContainer = document.querySelector('.form-container');
+const $listContainer = document.querySelector('.list-container');
+const $homeBtn = document.querySelector('.aw-logo');
+const $homeBtn2 = document.querySelector('.home');
+const $score = document.getElementById('score');
+const $listRow = document.querySelector('.list-row');
+const $watchListDesk = document.querySelector('.watch-list-desktop');
+const $watchListMobile = document.querySelector('.watch-list-mobile');
+const $WatchListContainer = document.querySelector('.watch-list-container');
+const $heart = document.querySelector('.lds-heart');
+const $noEntries = document.querySelector('.empty-results');
+const $lost = document.querySelector('.lost');
+
+let currentId = null;
+const $noAnime = document.querySelector('.no-anime');
 function genreSearch(value, score) {
-  var xhr = new XMLHttpRequest();
+  const xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://api.jikan.moe/v3/search/anime?q=&genre=' + value + '&score=' + score);
   xhr.responseType = 'json';
+  $heart.className = 'lds-heart row justify-center';
+  $resultsContainer.classList.add('hiding');
   xhr.addEventListener('load', function () {
-    var randomAnime = shuffle(xhr.response.results);
-    var resultAnime = randomAnime[0];
+    if (xhr.status === 404) {
+      $noEntries.classList.toggle('hidden');
+      $heart.className = 'hidden';
+      $resultsContainer.classList.toggle('hidden');
+    }
+    const randomAnime = shuffle(xhr.response.results);
+    const resultAnime = randomAnime[0];
     synopsis(resultAnime.mal_id);
+    $heart.className = 'hidden';
+    $resultsContainer.classList.remove('hiding');
+  });
+  xhr.addEventListener('error', () => {
+    $lost.classList.toggle('hidden');
+    $heart.className = 'hidden';
+    $resultsContainer.classList.toggle('hidden');
   });
   xhr.send();
 }
@@ -87,12 +105,12 @@ function genreDOMCreation(fullAnime) {
   $saveLabel.setAttribute('class', 'not-good');
   $saveLabel.textContent = 'Binge Worthy?';
 
-  var $saveBtn = document.createElement('input');
-  $saveBtn.setAttribute('type', 'submit');
+  var $saveBtn = document.createElement('button');
   $saveBtn.setAttribute('id', 'save');
   $saveBtn.setAttribute('data-value', JSON.stringify(fullAnime));
   $saveBtn.setAttribute('class', 'click-me refresh save-me button');
   $saveBtn.setAttribute('value', 'Sa...Save me');
+  $saveBtn.textContent = 'Sa...Save me';
   $saveBtnDiv.appendChild($saveLabel);
   $saveBtnDiv.appendChild($saveBtn);
   $saveBtn.addEventListener('click', createAnimeList);
@@ -108,11 +126,11 @@ function genreDOMCreation(fullAnime) {
 
   $notGoodBtn.appendChild($label);
 
-  var $input = document.createElement('input');
-  $input.setAttribute('type', 'submit');
+  var $input = document.createElement('button');
   $input.setAttribute('id', 'repeat');
   $input.setAttribute('value', 'Cli-click me');
-  $input.setAttribute('class', 'click-me refresh button random');
+  $input.setAttribute('class', 'click-me refresh pointer button random');
+  $input.textContent = 'Cli-click me';
 
   $notGoodBtn.appendChild($input);
   $rowResult.appendChild($buttonRow);
@@ -154,7 +172,7 @@ function watchListCreation(animeObject) {
 
   var $trash = document.createElement('img');
   $trash.setAttribute('src', 'images/Trash.ico');
-  $trash.setAttribute('class', 'trash');
+  $trash.setAttribute('class', 'trash pointer');
   $trash.setAttribute('alt', 'trashcan');
   $imageTrashDiv.appendChild($trash);
 
@@ -206,6 +224,7 @@ function home(event) {
     $resultsContainer.classList.add('hidden');
     $listContainer.classList.add('hidden');
     $formContainer.classList.remove('hidden');
+    $noEntries.classList.add('hidden');
   }
 }
 
@@ -223,7 +242,6 @@ var $no = document.querySelector('.no');
 var $yes = document.querySelector('.yes');
 var $deleteEntry = document.querySelector('.delete-entry');
 function deleteModal(event) {
-  // console.log('event.target', event.target);
   if (event.target.matches('.trash')) {
     $deleteEntry.classList.remove('hidden');
     $WatchListContainer.classList.remove('opacity');
