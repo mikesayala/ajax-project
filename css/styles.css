@@ -391,12 +391,14 @@ datalist > option {
 
 .empty-results {
   color: white;
+  z-index: 3;
   font-family: 'Luckiest Guy', sans-serif;
 }
 
 .lost {
   color: white;
   font-family: 'Luckiest Guy', sans-serif;
+  z-index: 3;
 }
 
 .lost-h2 {

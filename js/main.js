@@ -22,20 +22,24 @@ function genreSearch(value, score) {
   const xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://api.jikan.moe/v3/search/anime?q=&genre=' + value + '&score=' + score);
   xhr.responseType = 'json';
-  $heart.className = 'lds-heart center';
+  $heart.className = 'lds-heart row justify-center';
+  $resultsContainer.classList.add('hiding');
   xhr.addEventListener('load', function () {
     if (xhr.status === 404) {
       $noEntries.classList.toggle('hidden');
       $heart.className = 'hidden';
+      $resultsContainer.classList.toggle('hidden');
     }
     const randomAnime = shuffle(xhr.response.results);
     const resultAnime = randomAnime[0];
     synopsis(resultAnime.mal_id);
     $heart.className = 'hidden';
+    $resultsContainer.classList.remove('hiding');
   });
   xhr.addEventListener('error', () => {
     $lost.classList.toggle('hidden');
     $heart.className = 'hidden';
+    $resultsContainer.classList.toggle('hidden');
   });
   xhr.send();
 }
