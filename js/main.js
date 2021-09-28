@@ -225,6 +225,7 @@ function home(event) {
     $listContainer.classList.add('hidden');
     $formContainer.classList.remove('hidden');
     $noEntries.classList.add('hidden');
+    $heart.classList.toggle('hiding');
   }
 }
 
