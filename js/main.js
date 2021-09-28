@@ -24,7 +24,7 @@ function genreSearch(value, score) {
   xhr.responseType = 'json';
   $heart.className = 'lds-heart row justify-center';
   $resultsContainer.classList.add('hiding');
-  xhr.addEventListener('load', function () {
+  xhr.addEventListener('load', () => {
     if (xhr.status === 404) {
       $noEntries.classList.toggle('hidden');
       $heart.className = 'hidden';
@@ -48,8 +48,8 @@ function synopsis(malId) {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://api.jikan.moe/v3/anime/' + malId);
   xhr.responseType = 'json';
-  xhr.addEventListener('load', function () {
-    var fullAnime = {
+  xhr.addEventListener('load', () => {
+    const fullAnime = {
       title: xhr.response.title,
       image: xhr.response.image_url,
       synopsis: xhr.response.synopsis
@@ -60,52 +60,52 @@ function synopsis(malId) {
 }
 
 function genreDOMCreation(fullAnime) {
-  var $genreObject = document.createElement('div');
+  const $genreObject = document.createElement('div');
   $genreObject.setAttribute('class', 'genre-object');
 
-  var $rowResult = document.createElement('div');
+  const $rowResult = document.createElement('div');
   $rowResult.setAttribute('class', 'row justify-center flex-wrap results-row');
 
-  var $imgUrl = document.createElement('img');
+  const $imgUrl = document.createElement('img');
   $imgUrl.setAttribute('src', fullAnime.image);
   $imgUrl.setAttribute('class', 'img-result');
   $rowResult.appendChild($imgUrl);
 
-  var $synopsisContainer = document.createElement('div');
+  const $synopsisContainer = document.createElement('div');
 
-  var $desktopTitle = document.createElement('h3');
+  const $desktopTitle = document.createElement('h3');
   $desktopTitle.setAttribute('class', 'title desktop-title');
   $desktopTitle.textContent = fullAnime.title;
   $synopsisContainer.appendChild($desktopTitle);
 
-  var $p = document.createElement('p');
+  const $p = document.createElement('p');
   $p.setAttribute('class', 'synopsis');
   $p.textContent = fullAnime.synopsis;
   $synopsisContainer.appendChild($p);
 
   $rowResult.appendChild($synopsisContainer);
 
-  var $divTitle = document.createElement('div');
+  const $divTitle = document.createElement('div');
   $divTitle.setAttribute('class', 'row justify-center margin-top');
 
-  var $h3 = document.createElement('h3');
+  const $h3 = document.createElement('h3');
   $h3.setAttribute('class', 'title mobile-title');
   $h3.textContent = fullAnime.title;
   $divTitle.appendChild($h3);
 
-  var $buttonRow = document.createElement('div');
+  const $buttonRow = document.createElement('div');
   $buttonRow.setAttribute('class', 'row form');
 
   var $saveBtnDiv = document.createElement('div');
   $saveBtnDiv.setAttribute('class', 'row justify-center not-good-btn save');
   $buttonRow.appendChild($saveBtnDiv);
 
-  var $saveLabel = document.createElement('label');
+  const $saveLabel = document.createElement('label');
   $saveLabel.setAttribute('for', 'save');
   $saveLabel.setAttribute('class', 'not-good');
   $saveLabel.textContent = 'Binge Worthy?';
 
-  var $saveBtn = document.createElement('button');
+  const $saveBtn = document.createElement('button');
   $saveBtn.setAttribute('id', 'save');
   $saveBtn.setAttribute('data-value', JSON.stringify(fullAnime));
   $saveBtn.setAttribute('class', 'click-me refresh save-me button');
@@ -115,18 +115,18 @@ function genreDOMCreation(fullAnime) {
   $saveBtnDiv.appendChild($saveBtn);
   $saveBtn.addEventListener('click', createAnimeList);
 
-  var $notGoodBtn = document.createElement('div');
+  const $notGoodBtn = document.createElement('div');
   $notGoodBtn.setAttribute('class', 'row justify-center not-good-btn');
   $buttonRow.appendChild($notGoodBtn);
 
-  var $label = document.createElement('label');
+  const $label = document.createElement('label');
   $label.setAttribute('for', 'repeat');
   $label.setAttribute('class', 'not-good');
   $label.textContent = 'Is it... not good enough?';
 
   $notGoodBtn.appendChild($label);
 
-  var $input = document.createElement('button');
+  const $input = document.createElement('button');
   $input.setAttribute('id', 'repeat');
   $input.setAttribute('value', 'Cli-click me');
   $input.setAttribute('class', 'click-me refresh pointer button random');
@@ -142,9 +142,9 @@ function genreDOMCreation(fullAnime) {
 }
 
 function createAnimeList(event) {
-  var fullAnime = JSON.parse(event.target.getAttribute('data-value'));
+  const fullAnime = JSON.parse(event.target.getAttribute('data-value'));
   if (event.target.parentElement.matches('.save')) {
-    var animeObject = {
+    const animeObject = {
       title: fullAnime.title,
       image: fullAnime.image,
       synopsis: fullAnime.synopsis,
@@ -157,7 +157,7 @@ function createAnimeList(event) {
 }
 
 function watchListCreation(animeObject) {
-  var $listColumn = document.createElement('div');
+  const $listColumn = document.createElement('div');
   $listColumn.setAttribute('class', 'column list-column data-id');
   $listColumn.setAttribute('data-anime-id', animeObject.id);
 
@@ -165,18 +165,18 @@ function watchListCreation(animeObject) {
   $imageTrashDiv.setAttribute('class', 'row justify-center');
   $listColumn.appendChild($imageTrashDiv);
 
-  var $listImg = document.createElement('img');
+  const $listImg = document.createElement('img');
   $listImg.setAttribute('src', animeObject.image);
   $listImg.setAttribute('class', 'list-img');
   $imageTrashDiv.appendChild($listImg);
 
-  var $trash = document.createElement('img');
+  const $trash = document.createElement('img');
   $trash.setAttribute('src', 'images/Trash.ico');
   $trash.setAttribute('class', 'trash pointer');
   $trash.setAttribute('alt', 'trashcan');
   $imageTrashDiv.appendChild($trash);
 
-  var $listH4 = document.createElement('h4');
+  const $listH4 = document.createElement('h4');
   $listH4.setAttribute('class', 'h4');
   $listH4.textContent = animeObject.title;
   $listColumn.appendChild($listH4);
@@ -185,15 +185,15 @@ function watchListCreation(animeObject) {
 }
 
 function submitAnime(event) {
-  for (var i = 0; i < data.anime.length; i++) {
+  for (let i = 0; i < data.anime.length; i++) {
     $listRow.append(watchListCreation(data.anime[i]));
   }
 }
 
 function shuffle(array) {
-  for (var i = 0; i < array.length; i++) {
-    var randomPosition = Math.floor(Math.random() * array.length);
-    var placeHolder = array[i];
+  for (let i = 0; i < array.length; i++) {
+    const randomPosition = Math.floor(Math.random() * array.length);
+    const placeHolder = array[i];
     array[i] = array[randomPosition];
     array[randomPosition] = placeHolder;
   }
@@ -225,7 +225,6 @@ function home(event) {
     $listContainer.classList.add('hidden');
     $formContainer.classList.remove('hidden');
     $noEntries.classList.add('hidden');
-    $heart.classList.toggle('hiding');
   }
 }
 
@@ -239,15 +238,15 @@ function watchListToggle(event) {
     $noAnime.classList.remove('hidden');
   }
 }
-var $no = document.querySelector('.no');
-var $yes = document.querySelector('.yes');
-var $deleteEntry = document.querySelector('.delete-entry');
+const $no = document.querySelector('.no');
+const $yes = document.querySelector('.yes');
+const $deleteEntry = document.querySelector('.delete-entry');
 function deleteModal(event) {
   if (event.target.matches('.trash')) {
     $deleteEntry.classList.remove('hidden');
     $WatchListContainer.classList.remove('opacity');
-    var dataId = event.target.closest('div.data-id');
-    var closestDataId = dataId;
+    const dataId = event.target.closest('div.data-id');
+    const closestDataId = dataId;
     currentId = closestDataId.getAttribute('data-anime-id');
   }
 }
@@ -258,11 +257,11 @@ function handleNo(event) {
 }
 
 function handleYes(event) {
-  var $dataIdList = document.querySelectorAll('.data-id');
+  const $dataIdList = document.querySelectorAll('.data-id');
   if ($dataIdList.length === 0) {
     return;
   }
-  for (var nextAnimeId = 0; nextAnimeId < data.anime.length; nextAnimeId++) {
+  for (let nextAnimeId = 0; nextAnimeId < data.anime.length; nextAnimeId++) {
     if (data.anime[nextAnimeId].id === parseInt(currentId)) {
       data.anime.splice(nextAnimeId, 1);
     }
