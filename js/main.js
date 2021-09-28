@@ -242,7 +242,6 @@ var $no = document.querySelector('.no');
 var $yes = document.querySelector('.yes');
 var $deleteEntry = document.querySelector('.delete-entry');
 function deleteModal(event) {
-  // console.log('event.target', event.target);
   if (event.target.matches('.trash')) {
     $deleteEntry.classList.remove('hidden');
     $WatchListContainer.classList.remove('opacity');
