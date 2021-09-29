@@ -25,19 +25,16 @@ I like I can save it to a watch list.
 * User can search by rating.
 * User can view synopsis of the anime.
 * User can save to a watch list.
-* User can delete the animes they've watched.
+* User can delete the anime they've watched.
 
 ## Getting Started
 1. Clone the repository.
-   ```Shell 
-   Git clone https://github.com/mikesayala/ajax-project.git
+   ```Shell
+   git clone https://github.com/mikesayala/ajax-project.git
    cd ajax-project
    ```
 2. Install all dependencies with NPM.
    ```
-   run npm ci in the command line.
+   npm ci
    ```
 3. Start the project. Once started you can view the application by opening the index.html file in your browser.
-   
-   
-
