@@ -110,7 +110,7 @@ function genreDOMCreation(fullAnime) {
   $saveBtn.setAttribute('data-value', JSON.stringify(fullAnime));
   $saveBtn.setAttribute('class', 'click-me refresh save-me button');
   $saveBtn.setAttribute('value', 'Sa...Save me');
-  $saveBtn.textContent = 'Sa...Save me';
+  $saveBtn.textContent = 'Save me';
   $saveBtnDiv.appendChild($saveLabel);
   $saveBtnDiv.appendChild($saveBtn);
   $saveBtn.addEventListener('click', createAnimeList);
@@ -130,7 +130,7 @@ function genreDOMCreation(fullAnime) {
   $input.setAttribute('id', 'repeat');
   $input.setAttribute('value', 'Cli-click me');
   $input.setAttribute('class', 'click-me refresh pointer button random');
-  $input.textContent = 'Cli-click me';
+  $input.textContent = 'Click me';
 
   $notGoodBtn.appendChild($input);
   $rowResult.appendChild($buttonRow);
