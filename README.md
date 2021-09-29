@@ -34,10 +34,10 @@ I like I can save it to a watch list.
    cd ajax-project
    ```
 2. Install all dependencies with NPM.
+   ```
    run npm ci in the command line.
    ```
 3. Start the project. Once started you can view the application by opening the index.html file in your browser.
-   run npm ci in the command line.
    
    
 
