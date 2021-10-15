@@ -15,6 +15,8 @@ const $WatchListContainer = document.querySelector('.watch-list-container');
 const $heart = document.querySelector('.lds-heart');
 const $noEntries = document.querySelector('.empty-results');
 const $lost = document.querySelector('.lost');
+const $animeWatchersDesktop = document.querySelector('.anime-watchers-desktop');
+const $animeWatchersMobile = document.querySelector('.anime-watchers-mobile');
 
 let currentId = null;
 const $noAnime = document.querySelector('.no-anime');
@@ -220,7 +222,7 @@ function handleRefresh(event) {
 }
 
 function home(event) {
-  if (event.target.matches('.aw-logo') || event.target.matches('.home')) {
+  if (event.target.matches('.aw-logo') || event.target.matches('.home') || event.target.matches('.anime-watchers-desktop') || event.target.matches('.anime-watchers-mobile')) {
     $resultsContainer.classList.add('hidden');
     $listContainer.classList.add('hidden');
     $formContainer.classList.remove('hidden');
@@ -287,6 +289,8 @@ $watchListMobile.addEventListener('click', watchListToggle);
 $watchListDesk.addEventListener('click', watchListToggle);
 $form.addEventListener('submit', handleSearch);
 $resultsContainer.addEventListener('click', handleRefresh);
+$animeWatchersDesktop.addEventListener('click', home);
+$animeWatchersMobile.addEventListener('click', home);
 $homeBtn.addEventListener('click', home);
 $homeBtn2.addEventListener('click', home);
 document.addEventListener('DOMContentLoaded', onLoad);
