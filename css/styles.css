@@ -95,17 +95,19 @@ body {
   border-radius: 3px;
   border: none;
   font-size: 15px;
-  margin-right: 10px;
+  margin-right: 5px;
+  text-align: center;
 }
 
 .click-me {
   font-family: 'Luckiest Guy', sans-serif;
   color: black;
   background-color: #c4c4c4;
-  padding: 10px 25px;
+  padding: 10px 15px;
   border-radius: 3px;
   border: none;
   font-size: 15px;
+  margin-right: 5px;
 }
 
 .height {
