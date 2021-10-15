@@ -89,7 +89,7 @@ body {
 
 .genre-select {
   background-color: #c4c4c4;
-  color: white;
+  color: black;
   padding: 10px 15px;
   font-family: 'Luckiest Guy', sans-serif;
   border-radius: 3px;
@@ -105,7 +105,7 @@ body {
   padding: 10px 25px;
   border-radius: 3px;
   border: none;
-  font-size: 11px;
+  font-size: 15px;
 }
 
 .height {
