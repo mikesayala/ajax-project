@@ -124,7 +124,7 @@ function genreDOMCreation(fullAnime) {
   const $label = document.createElement('label');
   $label.setAttribute('for', 'repeat');
   $label.setAttribute('class', 'not-good');
-  $label.textContent = 'Is it... not good enough?';
+  $label.textContent = "Don't like it?";
 
   $notGoodBtn.appendChild($label);
 
@@ -132,7 +132,7 @@ function genreDOMCreation(fullAnime) {
   $input.setAttribute('id', 'repeat');
   $input.setAttribute('value', 'Cli-click me');
   $input.setAttribute('class', 'click-me refresh pointer button random');
-  $input.textContent = 'Click me';
+  $input.textContent = 'Try again';
 
   $notGoodBtn.appendChild($input);
   $rowResult.appendChild($buttonRow);
