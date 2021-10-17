@@ -172,10 +172,14 @@ function watchListCreation(animeObject) {
   $listImg.setAttribute('class', 'list-img');
   $imageTrashDiv.appendChild($listImg);
 
-  const $trash = document.createElement('img');
-  $trash.setAttribute('src', 'images/Trash.ico');
-  $trash.setAttribute('class', 'trash pointer');
-  $trash.setAttribute('alt', 'trashcan');
+  // const $trash = document.createElement('img');
+  // $trash.setAttribute('src', 'images/Trash.ico');
+  // $trash.setAttribute('class', 'trash pointer');
+  // $trash.setAttribute('alt', 'trashcan');
+  // $imageTrashDiv.appendChild($trash);
+
+  const $trash = document.createElement('i');
+  $trash.setAttribute('class', 'trash pointer fas fa-trash-alt');
   $imageTrashDiv.appendChild($trash);
 
   const $listH4 = document.createElement('h4');
