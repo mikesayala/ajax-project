@@ -164,7 +164,7 @@ function watchListCreation(animeObject) {
   $listColumn.setAttribute('data-anime-id', animeObject.id);
 
   var $imageTrashDiv = document.createElement('div');
-  $imageTrashDiv.setAttribute('class', 'row justify-center');
+  $imageTrashDiv.setAttribute('class', 'relative row justify-center');
   $listColumn.appendChild($imageTrashDiv);
 
   const $listImg = document.createElement('img');
@@ -179,11 +179,11 @@ function watchListCreation(animeObject) {
   // $imageTrashDiv.appendChild($trash);
 
   const $trash = document.createElement('i');
-  $trash.setAttribute('class', 'trash pointer fas fa-trash-alt');
+  $trash.setAttribute('class', 'position-right-one-font-25 trash pointer fas fa-trash-alt');
   $imageTrashDiv.appendChild($trash);
 
   const $listH4 = document.createElement('h4');
-  $listH4.setAttribute('class', 'h4');
+  $listH4.setAttribute('class', 'h4 text-center');
   $listH4.textContent = animeObject.title;
   $listColumn.appendChild($listH4);
 
