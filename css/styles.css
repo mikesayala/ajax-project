@@ -111,7 +111,7 @@ body {
 }
 
 .height {
-  height: 35vh;
+  height: 38vh;
 }
 
 .hidden {
@@ -193,7 +193,7 @@ datalist > option {
 
 .synopsis {
   color: white;
-  margin: 19px auto;
+  margin: 10px auto;
   width: 90%;
   font-family: 'PT sans', sans-serif;
 }

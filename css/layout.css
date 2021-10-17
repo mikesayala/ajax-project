@@ -71,11 +71,11 @@
   }
 
   .img-result {
-    width: 100px;
+    width: 170px;
   }
 
   .synopsis {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .margin-top {
@@ -109,13 +109,25 @@
   }
 
   .img-result {
-    width: 138px;
+    width: 190px;
+  }
+
+  .synopsis {
+    font-size: 13px;
   }
 }
 
 @media screen and (min-width: 484px) {
   .logo {
     width: 6rem;
+  }
+
+  .img-result {
+    width: 200px;
+  }
+
+  .synopsis {
+    font-size: 14px;
   }
 }
 
@@ -126,6 +138,14 @@
 
   .title {
     font-size: 24px;
+  }
+
+  .img-result {
+    width: 205px;
+  }
+
+  .synopsis {
+    font-size: 14px;
   }
 }
 
@@ -148,12 +168,20 @@
   .no-anime {
     font-size: 20px;
   }
+
+  .synopsis {
+    font-size: 14px;
+  }
 }
 
 @media screen and (min-width: 690px) {
   .logo {
     width: 6rem;
     height: 11vh;
+  }
+
+  .synopsis {
+    font-size: 15px;
   }
 }
 
@@ -194,7 +222,7 @@
   }
 
   .synopsis {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .list-column {
