@@ -20,6 +20,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=PT+Sans:wght@400;700&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <div class="delete-entry hidden">
@@ -39,7 +42,9 @@
   <header class="header">
     <div class="container pointer header-container row">
       <img src="images/anime-watchers.png" alt="anime watchers logo" class="aw-logo logo">
-      <h2 class="anime-watchers">Anime<br />Watchers</h2>
+      <a>
+      <h2 class="anime-watchers anime-watchers-desktop">Anime<br />Watchers</h2>
+      </a>
       <a href="#" class="anime-watchers watch-list-desktop">Watch<br />list</a>
     </div>
   </header>
@@ -47,6 +52,9 @@
     <div class="container form-container">
       <div class="row justify-center headline-container">
         <h3 class="headline">Trying to watch anime but don't know what to watch?</h3>
+      </div>
+      <div class="row justify-center headline-container">
+        <p class="headline">Choose a rating score, and a genre of anime and click the button!</p>
       </div>
     <form action="" class="form">
       <div class="row height justify-center">
@@ -73,7 +81,7 @@
             </div>
           </div>
           <select name="select" id="genre" class="pointer genre-select">
-            <option value="0">Genre</option>
+            <option value="0">Choose Genre</option>
             <option value="1">Action</option>
             <option value="2">Adventure</option>
             <option value="3">Cars</option>
@@ -155,7 +163,9 @@
   <div class="mobile-logo">
     <div class="container pointer footer-container row">
       <img src="images/anime-watchers.png" alt="anime watchers logo" class="logo pointer home">
-      <h2 class="anime-watchers">Anime<br />Watchers</h2>
+      <a>
+      <h2 class="anime-watchers anime-watchers-mobile">Anime<br />Watchers</h2>
+      </a>
       <a href="#" class="anime-watchers watch-list-mobile">Watch<br />list</a>
     </div>
   </div>

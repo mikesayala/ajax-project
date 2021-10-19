@@ -15,6 +15,8 @@ const $WatchListContainer = document.querySelector('.watch-list-container');
 const $heart = document.querySelector('.lds-heart');
 const $noEntries = document.querySelector('.empty-results');
 const $lost = document.querySelector('.lost');
+const $animeWatchersDesktop = document.querySelector('.anime-watchers-desktop');
+const $animeWatchersMobile = document.querySelector('.anime-watchers-mobile');
 
 let currentId = null;
 const $noAnime = document.querySelector('.no-anime');
@@ -122,7 +124,7 @@ function genreDOMCreation(fullAnime) {
   const $label = document.createElement('label');
   $label.setAttribute('for', 'repeat');
   $label.setAttribute('class', 'not-good');
-  $label.textContent = 'Is it... not good enough?';
+  $label.textContent = "Don't like it?";
 
   $notGoodBtn.appendChild($label);
 
@@ -130,7 +132,7 @@ function genreDOMCreation(fullAnime) {
   $input.setAttribute('id', 'repeat');
   $input.setAttribute('value', 'Cli-click me');
   $input.setAttribute('class', 'click-me refresh pointer button random');
-  $input.textContent = 'Click me';
+  $input.textContent = 'Try again';
 
   $notGoodBtn.appendChild($input);
   $rowResult.appendChild($buttonRow);
@@ -162,7 +164,7 @@ function watchListCreation(animeObject) {
   $listColumn.setAttribute('data-anime-id', animeObject.id);
 
   var $imageTrashDiv = document.createElement('div');
-  $imageTrashDiv.setAttribute('class', 'row justify-center');
+  $imageTrashDiv.setAttribute('class', 'relative row justify-center');
   $listColumn.appendChild($imageTrashDiv);
 
   const $listImg = document.createElement('img');
@@ -170,14 +172,18 @@ function watchListCreation(animeObject) {
   $listImg.setAttribute('class', 'list-img');
   $imageTrashDiv.appendChild($listImg);
 
-  const $trash = document.createElement('img');
-  $trash.setAttribute('src', 'images/Trash.ico');
-  $trash.setAttribute('class', 'trash pointer');
-  $trash.setAttribute('alt', 'trashcan');
+  // const $trash = document.createElement('img');
+  // $trash.setAttribute('src', 'images/Trash.ico');
+  // $trash.setAttribute('class', 'trash pointer');
+  // $trash.setAttribute('alt', 'trashcan');
+  // $imageTrashDiv.appendChild($trash);
+
+  const $trash = document.createElement('i');
+  $trash.setAttribute('class', 'position-right-one-font-25 trash pointer fas fa-trash-alt');
   $imageTrashDiv.appendChild($trash);
 
   const $listH4 = document.createElement('h4');
-  $listH4.setAttribute('class', 'h4');
+  $listH4.setAttribute('class', 'h4 text-center');
   $listH4.textContent = animeObject.title;
   $listColumn.appendChild($listH4);
 
@@ -212,6 +218,8 @@ function handleRefresh(event) {
   event.preventDefault();
   if (event.target.matches('.save-me')) {
     $noAnime.classList.add('hidden');
+    $resultsContainer.classList.toggle('hidden');
+    $listContainer.classList.toggle('hidden');
     submitAnime(data.anime[0]);
   } else if (event.target.matches('.random')) {
     $resultsContainer.innerHTML = '';
@@ -220,7 +228,7 @@ function handleRefresh(event) {
 }
 
 function home(event) {
-  if (event.target.matches('.aw-logo') || event.target.matches('.home')) {
+  if (event.target.matches('.aw-logo') || event.target.matches('.home') || event.target.matches('.anime-watchers-desktop') || event.target.matches('.anime-watchers-mobile')) {
     $resultsContainer.classList.add('hidden');
     $listContainer.classList.add('hidden');
     $formContainer.classList.remove('hidden');
@@ -287,6 +295,8 @@ $watchListMobile.addEventListener('click', watchListToggle);
 $watchListDesk.addEventListener('click', watchListToggle);
 $form.addEventListener('submit', handleSearch);
 $resultsContainer.addEventListener('click', handleRefresh);
+$animeWatchersDesktop.addEventListener('click', home);
+$animeWatchersMobile.addEventListener('click', home);
 $homeBtn.addEventListener('click', home);
 $homeBtn2.addEventListener('click', home);
 document.addEventListener('DOMContentLoaded', onLoad);
